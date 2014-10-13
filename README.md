@@ -7,4 +7,4 @@ Written in <a href="http://msdn.microsoft.com/en-gb/library/aa288436(v=vs.71).as
 
 Tests by <a href="http://www.nunit.org/">nUnit</a>.
 
-Continuous deployment shout to <a href="https://appharbor.com/">AppHarbor<a/>.
+Continuous deployment shout to <a href="https://appharbor.com/">AppHarbor<a/>. 
