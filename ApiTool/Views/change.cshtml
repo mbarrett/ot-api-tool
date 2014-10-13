@@ -1,0 +1,67 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Change call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/change/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+    <fieldset>
+        <label for="restaurantId">Restaurant Id</label>
+        <input type="text" name="restaurantId" value="@Model.DefaultRestaurantId">
+    </fieldset>
+
+    <fieldset>
+        <label for="partySize">Party size</label>
+        <input type="text" name="partySize" value="@Model.DefaultPartySize">
+    </fieldset>
+
+    <fieldset>
+        <label for="dateTime">Date time</label>
+        <input type="text" name="dateTime" value="@Model.DefaultDateTime">
+    </fieldset>
+
+    <fieldset>
+        <label for="resultsKey">Results key</label>
+        <input type="text" name="resultsKey">
+    </fieldset>
+
+    <fieldset>
+        <label for="securityId">Security Id</label>
+        <input type="text" name="securityId">
+    </fieldset>
+
+    <fieldset>
+        <label for="slotLockId">Slotlock Id</label>
+        <input type="text" name="slotLockId">
+    </fieldset>
+
+    <fieldset>
+        <label for="offerId">Offer Id</label>
+        <input type="text" name="offerId" value="0">
+    </fieldset>
+
+    <fieldset>
+        <label for="offerTitle">Offer version</label>
+        <input type="text" name="offerVersion" value="0">
+    </fieldset>
+
+    <fieldset>
+        <label for="email">Email address</label>
+        <input type="text" name="email" class="long" value="api_tool_test@opentable.com">
+    </fieldset>
+    
+    <fieldset>
+        <label for="confirmationNumber">Confirmation number</label>
+        <input type="text" name="confirmationNumber" value="">
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" class="btn btn-go" value="Get results">
+        <a href="/change" class="start-again">Start again</a>
+    </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+    @Html.Partial("Shared/_js", "Change")

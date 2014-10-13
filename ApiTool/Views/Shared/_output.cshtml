@@ -1,0 +1,25 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@if(Model.HasUrl){
+       <h3>Request Url</h3>
+    <article>
+        <pre class="highlight">@Model.Url</pre>
+    </article>
+}
+@if(Model.HasAuthHeaders){
+    <article>
+        <h3>Authentication</h3>
+        <pre id="AuthHeaders" class="highlight">@Model.AuthHeaders</pre>
+    </article>
+}
+@if (Model.HasPostParameters)
+{
+    <article>
+        <h3>POST parameters</h3>
+        <pre id="PostParameters" class="highlight">@Model.PostParameters</pre>
+    </article>
+}
+@if (Model.HasResponse)
+{
+    <h3>API response</h3>
+    <pre id="Response" class="language-javascript">@Model.Response</pre>
+}

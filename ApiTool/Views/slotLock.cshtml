@@ -1,0 +1,42 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Slotlock call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/slotlock/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+    <fieldset>
+        <label for="restaurantId">Restaurant Id</label>
+        <input type="text" name="restaurantId" value="@Model.DefaultRestaurantId">
+    </fieldset>
+
+    <fieldset>
+        <label for="partySize">Party size</label>
+        <input type="text" name="partySize" value="@Model.DefaultPartySize">
+    </fieldset>
+
+    <fieldset>
+        <label for="dateTime">Date time</label>
+        <input type="text" name="dateTime" value="@Model.DefaultDateTime">
+    </fieldset>
+
+    <fieldset>
+        <label for="resultsKey">Results key</label>
+        <input type="text" name="resultsKey">
+    </fieldset>
+
+    <fieldset>
+        <label for="securityId">Security Id</label>
+        <input type="text" name="securityId">
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" class="btn btn-go" value="Get results">
+        <a href="/slotlock" class="start-again">Start again</a>
+    </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+     @Html.Partial("Shared/_js", "Slot lock")

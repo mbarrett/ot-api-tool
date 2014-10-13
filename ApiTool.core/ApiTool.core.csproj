@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE8F7A4F-E458-4EFC-A2E7-27E03D126311}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>apitool.core</RootNamespace>
+    <AssemblyName>apitool.core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Nancy, Version=0.17.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Nancy.0.17.1\lib\net40\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\Authorization\AuthorizationHeaderBuilder.cs" />
+    <Compile Include="Builders\Criteria\AddFavoriteCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\RemoveFavoriteCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\GetFavoritesCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\MyReservationsCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\RegisterCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\OfferDetailsCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\SearchRegionsCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\LoginCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\LocalRestaurantsByNameCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\SearchRestaurantIdsCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\GeoSearchCriteriaBuilder.cs" />
+    <Compile Include="Models\Parameters\AuthorizationHeaderParameters.cs" />
+    <Compile Include="Builders\Criteria\CancelCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\ChangeCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\ICallCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\MakeCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\RestaurantCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\SlotLockCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\TableCriteriaBuilder.cs" />
+    <Compile Include="Builders\Authorization\HashAlgorithmBuilder.cs" />
+    <Compile Include="Builders\Authorization\IAuthorizationHeaderBuilder.cs" />
+    <Compile Include="Builders\Authorization\IHashAlgorithmBuilder.cs" />
+    <Compile Include="Builders\Authorization\IOAuthSignitureBuilder.cs" />
+    <Compile Include="Builders\IQueryParameterBuilder.cs" />
+    <Compile Include="Builders\IOtApiViewModelBuilder.cs" />
+    <Compile Include="Builders\IWebResponseBuilder.cs" />
+    <Compile Include="Builders\Authorization\OAuthSignitureBuilder.cs" />
+    <Compile Include="Builders\QueryParameterBuilder.cs" />
+    <Compile Include="Builders\OtApiViewModelBuilder.cs" />
+    <Compile Include="Builders\WebResponseBuilder.cs" />
+    <Compile Include="Constants\OAuthConstants.cs" />
+    <Compile Include="Extensions\AuthenticationExtentions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\UrlExtensions.cs" />
+    <Compile Include="Models\AuthorizationHeader.cs" />
+    <Compile Include="Models\CallCriteria.cs" />
+    <Compile Include="Models\ICallCriteria.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\OAuthSigniture.cs" />
+    <Compile Include="Models\Parameters\CallParameters.cs" />
+    <Compile Include="Models\Parameters\QueryParameter.cs" />
+    <Compile Include="Models\Parameters\QueryParameterComparer.cs" />
+    <Compile Include="Modules\HomeModule.cs" />
+    <Compile Include="Modules\OtApiToolModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CallCriteriaProvider.cs" />
+    <Compile Include="Providers\ConfigurationProvider.cs" />
+    <Compile Include="Providers\ConsumerProvider.cs" />
+    <Compile Include="Providers\DateTimeProvider.cs" />
+    <Compile Include="Providers\ICallCriteriaProvider.cs" />
+    <Compile Include="Providers\IConfigurationProvider.cs" />
+    <Compile Include="Providers\IConsumerProvider.cs" />
+    <Compile Include="Providers\IDateTimeProvider.cs" />
+    <Compile Include="Providers\IOAuthSignitureProvider.cs" />
+    <Compile Include="Providers\OAuthSignitureProvider.cs" />
+    <Compile Include="Validators\IOAuthValidator.cs" />
+    <Compile Include="Validators\OAuthValidator.cs" />
+    <Compile Include="ViewModels\OtApiViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

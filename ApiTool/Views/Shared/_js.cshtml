@@ -1,0 +1,12 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<string>
+              
+<script type="text/javascript">
+    var setSelectedClass = function () {
+        var link = $('a:contains("@Model")');
+        link.addClass("current");
+    };
+        
+    $(document).ready(function () {
+        setSelectedClass();
+    });
+</script>

@@ -1,0 +1,26 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<string>
+
+<fieldset class="radio-buttons">
+    <p class="title">API version</p>
+    <input type="radio" name="ApiVersion" id="otapi" value="otapi">
+    <label for="otapi" class="btn btn--radio">V1</label>
+
+    <input type="radio" name="ApiVersion" id="otapi_v2" value="otapi_v2">
+    <label for="otapi_v2" class="btn btn--radio">V2</label>
+
+    <input type="radio" name="ApiVersion" id="otapi_v3" value="otapi_v3">
+    <label for="otapi_v3" class="btn btn--radio">V3</label>
+
+    <input type="radio" name="ApiVersion" id="v3" value="v3">
+    <label for="v3" class="btn btn--radio">V3.1</label>
+</fieldset>
+
+<script type="text/javascript">
+    var setSelectedApiVersion = function () {
+        $('#@Model').prop('checked', true);
+    };
+        
+    $(document).ready(function () {
+        setSelectedApiVersion();
+    });
+</script>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>OT API Tool - @ViewBag["Title"]</title>
+        <link rel="stylesheet" href="/Content/css/core.css" type="text/css">
+        <link rel="stylesheet" href="/Content/css/prism.css" type="text/css">
+    </head>
+    <body>
+        <script type="text/javascript" src="/Content/Scripts/libs/prism.js"></script>
+                                          
+        <script type="text/javascript" src="/Content/Scripts/libs/jquery-1.6.2.js"></script>
+        <script type="text/javascript" src="/Content/Scripts/libs/jquery.ui.core.js"></script>
+        <script type="text/javascript" src="/Content/Scripts/libs/jquery.ui.widget.js"></script>
+        
+        <script type="text/javascript" src="/Content/Scripts/navigation.js"></script>
+
+        <nav class="global-nav">
+            <h1>Our awesome API tool</h1>
+        </nav>
+        <div class="wrapper">
+            <nav class="api-nav">
+                @Html.Partial("Shared/_nav")
+            </nav>
+
+            <div class="main-content">
+                @RenderBody()
+            </div>
+        </div>
+    </body>
+</html>

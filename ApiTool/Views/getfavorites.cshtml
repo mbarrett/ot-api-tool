@@ -1,0 +1,23 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Get Favorites call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/getfavorites/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+       
+       <fieldset>
+            <label for="authToken">Auth Token</label>
+            <input type="text" name="authToken" class="long">
+        </fieldset>
+
+       <div class="buttons">
+           <input type="submit" class="btn btn-go" value="Get results">
+           <a href="/getfavorites" class="start-again">Start again</a>
+       </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+    @Html.Partial("Shared/_js", "Get Favorites")

@@ -1,0 +1,27 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Geo search call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/geosearch/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+    <fieldset>
+        <label for="partySize">Party size</label>
+        <input type="text" name="partySize" value="@Model.DefaultPartySize">
+    </fieldset>
+
+    <fieldset>
+        <label for="dateTime">Date time</label>
+        <input type="text" name="dateTime" value="@Model.DefaultDateTime">
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" class="btn btn-go" value="Get results">
+        <a href="/geosearch" class="start-again">Start again</a>
+    </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+    @Html.Partial("Shared/_js", "Geo search")

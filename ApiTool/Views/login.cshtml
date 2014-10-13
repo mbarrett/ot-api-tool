@@ -1,0 +1,18 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Login call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/login/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+
+    <div class="buttons">
+        <input type="submit" class="btn btn-go" value="Get results">
+        <a href="/login" class="start-again">Start again</a>
+    </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+    @Html.Partial("Shared/_js", "Login")

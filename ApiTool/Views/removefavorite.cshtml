@@ -1,0 +1,32 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<dynamic>
+@{
+    Layout = "Shared/Master.cshtml";
+    ViewBag["Title"] = "Remove Favorite call"; 
+}
+    @Html.Partial("Shared/_partnerDetails", Model)
+
+   <form action="/removefavorite/invoke" method="POST">
+    @Html.Partial("Shared/_apiSelection", @Model.ApiVersion)
+    <fieldset>
+        <label for="restaurantId">Restaurant Id</label>
+        <input type="text" name="restaurantId" value="@Model.DefaultRestaurantId">
+    </fieldset>
+
+    <fieldset>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="auto_user1@opentable.com">
+    </fieldset>
+
+    <fieldset>
+        <label for="authtoken">Auth Token</label>
+        <input type="text" name="authtoken">
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" class="btn btn-go" value="Get results">
+        <a href="/removefavorite" class="start-again">Start again</a>
+    </div>
+</form>
+
+    @Html.Partial("Shared/_output", Model)
+     @Html.Partial("Shared/_js", "Remove Favorite")
