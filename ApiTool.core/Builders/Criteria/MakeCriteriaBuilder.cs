@@ -29,7 +29,7 @@ namespace apitool.core.Builders.Criteria
                             {"RID", parameters.RestaurantId.ToString(CultureInfo.InvariantCulture)},
                             {"datetime", parameters.DateTime.ToApiDateTimeFormat()},
                             {"partysize", parameters.PartySize.ToString(CultureInfo.InvariantCulture)},
-                            {"phone", "02012345678"},
+                            {"phone", "0201234567"},
                             {"OTannouncementOption", "0"},
                             {"RestaurantEmailOption", "0"},
                             {"firstname", "John"},
