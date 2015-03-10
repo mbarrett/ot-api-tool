@@ -18,6 +18,7 @@ namespace apitool.core.Providers
                 {
                     _listOfCriteriaBuilders.Add("login", new LoginCriteriaBuilder());
                     _listOfCriteriaBuilders.Add("myreservations", new MyReservationsCriteriaBuilder());
+                    _listOfCriteriaBuilders.Add("reservationstatus", new ReservationStatusCriteriaBuilder());
                     _listOfCriteriaBuilders.Add("getfavorites", new GetFavoritesCriteriaBuilder());
                     _listOfCriteriaBuilders.Add("addfavorite", new AddFavoriteCriteriaBuilder());
                     _listOfCriteriaBuilders.Add("removefavorite", new RemoveFavoriteCriteriaBuilder());

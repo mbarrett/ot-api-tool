@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Builders\Authorization\AuthorizationHeaderBuilder.cs" />
     <Compile Include="Builders\Criteria\AddFavoriteCriteriaBuilder.cs" />
+    <Compile Include="Builders\Criteria\ReservationStatusCriteriaBuilder.cs" />
     <Compile Include="Builders\Criteria\RemoveFavoriteCriteriaBuilder.cs" />
     <Compile Include="Builders\Criteria\GetFavoritesCriteriaBuilder.cs" />
     <Compile Include="Builders\Criteria\MyReservationsCriteriaBuilder.cs" />
@@ -107,7 +108,9 @@
     <Compile Include="ViewModels\OtApiViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

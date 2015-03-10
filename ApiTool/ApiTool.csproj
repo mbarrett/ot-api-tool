@@ -104,6 +104,7 @@
     <Content Include="Views\getfavorites.cshtml" />
     <Content Include="Views\addfavorite.cshtml" />
     <Content Include="Views\removefavorite.cshtml" />
+    <Content Include="Views\reservationstatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
