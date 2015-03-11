@@ -36,5 +36,6 @@ namespace apitool.core.Models.Parameters
         public int ConfirmationNumber { get; set; }
         public string SearchTerm { get; set; }
         public string AuthToken { get; set; }
+        public bool IsUSDateFormat { get; set; }
     }
 }

@@ -27,7 +27,7 @@ namespace apitool.core.Builders.Criteria
                         {
                             {"email_address", parameters.Email},
                             {"RID", parameters.RestaurantId.ToString(CultureInfo.InvariantCulture)},
-                            {"datetime", parameters.DateTime.ToApiDateTimeFormat()},
+                            {"datetime", parameters.DateTime.ToApiDateTimeFormat(parameters.IsUSDateFormat)},
                             {"partysize", parameters.PartySize.ToString(CultureInfo.InvariantCulture)},
                             {"phone", "0201234567"},
                             {"OTannouncementOption", "0"},

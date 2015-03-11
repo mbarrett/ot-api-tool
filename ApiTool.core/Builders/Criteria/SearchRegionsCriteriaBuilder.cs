@@ -14,7 +14,7 @@ namespace apitool.core.Builders.Criteria
             var url = string.Format("{0}.ashx/table/?st=0&pid={1}&dt={2}&ps={3}&metroid=201&regids=1001",
                                         parameters.ApiVersion,
                                         ConfigurationManager.AppSettings["PartnerId"],
-                                        parameters.DateTime.ToApiDateTimeFormat().UrlEncode(),
+                                        parameters.DateTime.ToApiDateTimeFormat(parameters.IsUSDateFormat).UrlEncode(),
                                         parameters.PartySize);
 
             return new CallCriteria

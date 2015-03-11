@@ -26,7 +26,7 @@ namespace apitool.core.Builders.Criteria
                     PostParameters = new NameValueCollection
                         {
                             {"rid", parameters.RestaurantId.ToString(CultureInfo.InvariantCulture)},
-                            {"datetime", parameters.DateTime.ToApiDateTimeFormat()},
+                            {"datetime", parameters.DateTime.ToApiDateTimeFormat(parameters.IsUSDateFormat)},
                             {"partysize", parameters.PartySize.ToString(CultureInfo.InvariantCulture)},
                             {"timesecurityID", parameters.SecurityId},
                             {"resultskey", parameters.ResultsKey}

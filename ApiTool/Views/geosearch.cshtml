@@ -13,11 +13,16 @@
     </fieldset>
 
     <fieldset>
-        <label for="dateTime">Date time</label>
-        <input type="text" name="dateTime" value="@Model.DefaultDateTime">
+           <label for="dateTime">Date time</label>
+           <input type="text" name="dateTime" value="@Model.DefaultDateTime">
+    </fieldset>
+       
+    <fieldset>
+        <label for="isUSDateFormat">Is US date time?</label>
+        <input type="checkbox" name="isUSDateFormat">
     </fieldset>
 
-    <div class="buttons">
+       <div class="buttons">
         <input type="submit" class="btn btn-go" value="Get results">
         <a href="/geosearch" class="start-again">Start again</a>
     </div>

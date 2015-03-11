@@ -4,8 +4,13 @@ namespace apitool.core.Extensions
 {
     public static class DateTimeExtensions
     {
-         public static string ToApiDateTimeFormat(this DateTime value)
+         public static string ToApiDateTimeFormat(this DateTime value, bool isUsDateFormat)
          {
+             if (isUsDateFormat)
+             {
+                 return value.ToString("MM/dd/yyyy HH:mm:ss");    
+             }
+
              return value.ToString("dd/MM/yyyy HH:mm:ss");
          }
 

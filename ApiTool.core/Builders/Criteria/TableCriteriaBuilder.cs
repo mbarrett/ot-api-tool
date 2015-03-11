@@ -14,7 +14,7 @@ namespace apitool.core.Builders.Criteria
                                     parameters.ApiVersion,
                                     ConfigurationManager.AppSettings["PartnerId"],
                                     parameters.RestaurantId,
-                                    parameters.DateTime.ToApiDateTimeFormat().UrlEncode(),
+                                    parameters.DateTime.ToApiDateTimeFormat(parameters.IsUSDateFormat).UrlEncode(),
                                     parameters.PartySize);
 
             return new CallCriteria

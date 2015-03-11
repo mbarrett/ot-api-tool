@@ -13,7 +13,7 @@ namespace apitool.core.Builders.Criteria
            var url = string.Format("{0}.ashx/table/?st=0&pid={1}&dt={2}&ps={3}&lat=51.517636&long=-0.120528&miles=1&n=5&ccresults=0",
                                     parameters.ApiVersion,
                                     ConfigurationManager.AppSettings["PartnerId"],
-                                    parameters.DateTime.ToApiDateTimeFormat().UrlEncode(),
+                                    parameters.DateTime.ToApiDateTimeFormat(parameters.IsUSDateFormat).UrlEncode(),
                                     parameters.PartySize);
 
             return new CallCriteria
